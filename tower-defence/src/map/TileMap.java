@@ -131,7 +131,7 @@ public class TileMap {
 
 
         // return a hashmap holding the start end the end points
-        HashMap<String, Coordinate> tmp = new HashMap<>();
+        HashMap<String, Coordinate> tmp = new HashMap<String, Coordinate>();
         tmp.put("Start", new Coordinate(roadStartX, roadStartY));
         tmp.put("End", new Coordinate(roadEndX, roadEndY));
 
