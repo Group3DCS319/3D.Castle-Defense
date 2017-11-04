@@ -41,7 +41,7 @@ public class TileMap {
         int numberOfGrasslandLeaders = randomNumberInGivenRange(2, 6);
         int numberOfGroundLeaders    = randomNumberInGivenRange(2, 6);
 
-        HashMap<Coordinate, TileType> leaderMap = new HashMap<>();
+        HashMap<Coordinate, TileType> leaderMap = new HashMap<Coordinate, TileType>();
 
         // establish leader tiles for lakes
         for (int i = 0; i < numberOfLaketileLeaders; i++) {
@@ -77,7 +77,7 @@ public class TileMap {
         // draw the entire map
         for (int i = 0; i < mapSize; i++) {
             for (int j = 0; j < mapSize; j++) {
-                HashMap<Integer, TileType> distances = new HashMap<>(); // integer is for the distance
+                HashMap<Integer, TileType> distances = new HashMap<Integer, TileType>(); // integer is for the distance
 
                 // iterate the leader map and find the closest leader
                 for (java.util.Map.Entry<Coordinate, TileType> entry : leaderMap.entrySet()) {
@@ -103,7 +103,7 @@ public class TileMap {
         int roadEndX = 0;
         int roadEndY = 0;
 
-        HashMap<Integer, Coordinate> leaders = new HashMap<>();
+        HashMap<Integer, Coordinate> leaders = new HashMap<Integer, Coordinate>();
 
         // generate 4 different leader points
 
