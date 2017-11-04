@@ -1,5 +1,3 @@
-package view;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
@@ -10,60 +8,105 @@ import java.awt.event.ActionEvent;
  * A product of mecha
  */
 public class OpeningView extends JFrame {
-    // variables
-    private static final int WIDTH = 300;
-    private static final int HEIGHT = 400;
-    private JButton newGame;
-    private JButton openGame;
-    private BorderLayout layout;
-    private JPanel buttonPanel;
-
-    // constructor
-    public OpeningView() {
-        super("Castle Defence");
-        initializeGUI();
-        configure();
-
+  // variables
+  private static final int WIDTH = 300;
+  private static final int HEIGHT = 400;
+  private JButton newGame;
+  private JButton openGame;
+  private JButton scoresButton;
+  private JButton storeButton;
+  private JButton optionsButton;
+  private JButton creditsButton;
+  private BorderLayout layout;
+  private JPanel buttonPanel;
+  
+  // constructor
+  public OpeningView() {
+    super("Castle Defence");
+    initializeGUI();
+    configure();
+    
+  }
+  
+  // methods
+  private void configure() {
+    this.setSize(WIDTH, HEIGHT);
+    this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    this.setLocationByPlatform(true);
+    this.setVisible(true);
+  }
+  
+  private void initializeGUI() {
+    layout = new BorderLayout();
+    buttonPanel = new JPanel(new GridLayout(3, 3));
+    
+    newGame = new JButton("New Game");
+    newGame.addActionListener(new NewGameListener());
+    buttonPanel.add(newGame, BorderLayout.CENTER);
+    
+    openGame = new JButton("Open Game");
+    openGame.addActionListener(new OpenGameListener());
+    buttonPanel.add(openGame, BorderLayout.CENTER);
+    
+    scoresButton = new JButton("High Scores");
+    buttonPanel.add(scoresButton, BorderLayout.CENTER);
+    scoresButton.addActionListener(new HighScoresListener());
+    
+    storeButton = new JButton("Tower Store");
+    buttonPanel.add(storeButton, BorderLayout.CENTER);
+    storeButton.addActionListener(new TowerStoreListener());
+    
+    optionsButton = new JButton("Options");
+    buttonPanel.add(optionsButton, BorderLayout.CENTER);
+    optionsButton.addActionListener(new OptionsListener());
+    
+    creditsButton = new JButton("Credits");
+    buttonPanel.add(creditsButton, BorderLayout.CENTER);
+    creditsButton.addActionListener(new CreditsListener());
+    
+    this.add(buttonPanel);
+  }
+  
+  
+  // listener classes
+  
+  // new game listener
+  private class NewGameListener implements ActionListener {
+    public void actionPerformed(ActionEvent e) {
+      OpeningView.this.setVisible(false);
+      new GameScreen();
+      OpeningView.this.dispose();
     }
-
-    // methods
-    private void configure() {
-        this.setSize(WIDTH, HEIGHT);
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setLocationByPlatform(true);
-        this.setVisible(true);
+  }
+  
+  // open game listener
+  private class OpenGameListener implements ActionListener {
+    public void actionPerformed(ActionEvent e) {
+      // ToDo
     }
-
-    private void initializeGUI() {
-        layout = new BorderLayout();
-        buttonPanel = new JPanel(new GridLayout(1, 2));
-        newGame = new JButton("New Game");
-        newGame.addActionListener(new NewGameListener());
-        buttonPanel.add(newGame, BorderLayout.CENTER);
-        openGame = new JButton("Open Game");
-        openGame.addActionListener(new OpenGameListener());
-        buttonPanel.add(openGame, BorderLayout.CENTER);
-
-        this.add(buttonPanel);
+  }
+  
+  private class HighScoresListener implements ActionListener {
+    public void actionPerformed(ActionEvent e) {
+      // ToDo
     }
-
-
-    // listener classes
-
-    // new game listener
-    private class NewGameListener implements ActionListener {
-        public void actionPerformed(ActionEvent e) {
-            OpeningView.this.setVisible(false);
-            new GameScreen();
-            OpeningView.this.dispose();
-        }
+  }
+  
+  private class TowerStoreListener implements ActionListener {
+    public void actionPerformed(ActionEvent e) {
+      // ToDo
     }
-
-    // open game listener
-    private class OpenGameListener implements ActionListener {
-        public void actionPerformed(ActionEvent e) {
-            // ToDo
-        }
+  }
+  
+  private class OptionsListener implements ActionListener {
+    public void actionPerformed(ActionEvent e) {
+      OpeningView.this.add(new Options());
     }
-
+  }
+  
+  private class CreditsListener implements ActionListener {
+    public void actionPerformed(ActionEvent e) {
+      OpeningView.this.add(new Credits());
+    }
+  }
 }
