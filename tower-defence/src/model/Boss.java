@@ -65,7 +65,7 @@ public boolean isDead(){
     return dead;
 
 }
-public setMoves(ArrayList<Integer> m){moves=m;}
+public void setMoves(ArrayList<Integer> m){moves=m;}
 
 public void move(){
 while(!(stop || movenumber>= moves.size())){{
