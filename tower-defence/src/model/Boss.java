@@ -80,6 +80,7 @@ movenumber++;
 }
 public void stop(){
 curSpeed=0;
+stop=true;
 }
 public void stop(double durat){
     curSpeed=0;
