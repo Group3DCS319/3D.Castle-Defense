@@ -24,6 +24,10 @@ public Boss(int hp,int bounty, int id){
 public void slow(double slowRate,double slowDuration){
     
 }
+public void setPos(int x, int y){
+xPos=x;
+yPos=y;
+}
 
 public int getHP(){
     
