@@ -1,12 +1,13 @@
 abstract class Creep
  { 
-protected int hitpoint, 
+protected int hitpoint, movenumber,
 bounty, 
 id, 
 curHitpoint;
+protected ArrayList<Integer> moves;
 protected double movementspeed, curSpeed, slowRate, stunDuration, slowDuration, poisonDuration, poisonDamage;
 protected String name;
-protected boolean slowed, stunned, dead, poisoned;
+protected boolean slowed, stunned, dead, poisoned, stop;
 abstract void slow(double slowRate, double slowDuration);
 abstract int getHP();
 abstract void damage(int damageTaken);
