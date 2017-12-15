@@ -3,7 +3,7 @@ abstract class Creep
 protected int hitpoint, movenumber,
 bounty, 
 id, 
-curHitpoint;
+curHitpoint, xPos, yPos;
 protected ArrayList<Integer> moves;
 protected double movementspeed, curSpeed, slowRate, stunDuration, slowDuration, poisonDuration, poisonDamage;
 protected String name;
