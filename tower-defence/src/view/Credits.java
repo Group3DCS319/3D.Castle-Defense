@@ -10,15 +10,15 @@ public class Credits extends JFrame{
   public Credits (){ 
     //frame = new JFrame();
     JOptionPane.showMessageDialog(this,
-                "This game was created by Team 3D.\n If you have any suggestions on how "+
-                "to\n improve the game please feel free\n to contact us :)\n \n castledefenseTeam3d@gmail.com", "Credits",
-                JOptionPane.INFORMATION_MESSAGE, null);
+                                  "This game was created by Team 3D.\n If you have any suggestions on how "+
+                                  "to\n improve the game please feel free\n to contact us :)\n \n castledefenseTeam3d@gmail.com", "Credits",
+                                  JOptionPane.INFORMATION_MESSAGE, null);
     configure();
   }
   private void configure() {
     /*this.setSize(WIDTH, HEIGHT);
-    this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    this.setLocationByPlatform(true);
-    this.setVisible(true);*/
+     this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+     this.setLocationByPlatform(true);
+     this.setVisible(true);*/
   }
 }

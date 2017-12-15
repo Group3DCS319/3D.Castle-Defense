@@ -1,4 +1,4 @@
-package map;
+//package map;
 
 /**
  * A product of mehmetcc (Mehmet Can Altuntaş)
@@ -6,5 +6,5 @@ package map;
  */
 
 public enum TileType {
-    GROUND, LAKETILE, GRASSLAND, BRIDGE, ROAD, VOID
+  GROUND, LAKETILE, GRASSLAND, BRIDGE, ROAD, VOID
 }

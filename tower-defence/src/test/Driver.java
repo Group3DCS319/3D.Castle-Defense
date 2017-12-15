@@ -1,12 +1,12 @@
-package test;
+//package test;
 
-import view.OpeningView;
+//import view.OpeningView;
 
 /**
  * A product of mecha
  */
 public class Driver {
-    public static void main(String[] args) {
-        new OpeningView();
-    }
+  public static void main(String[] args) {
+    new OpeningView();
+  }
 }

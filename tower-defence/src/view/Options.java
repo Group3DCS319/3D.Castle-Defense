@@ -16,10 +16,10 @@ public class Options extends JPanel{
     JButton testButton = new JButton("Choose");
     JComboBox combo = new JComboBox(new String[]{"Easy","Normal","Hard"});
     testButton.addActionListener(new ActionListener(){
-             @Override
-             public void actionPerformed(ActionEvent evt){
-                  //todo
-             }
+      @Override
+      public void actionPerformed(ActionEvent evt){
+        //todo
+      }
     });              
     combo.setVisible(true);
     text.setEditable(false);

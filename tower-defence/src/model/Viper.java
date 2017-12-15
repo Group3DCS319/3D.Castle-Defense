@@ -1,6 +1,7 @@
+import java.util.*;
 class Viper extends Creep
- { 
-public Viper(int hp,int bounty, int id){
+{ 
+  public Viper(int hp,int bounty, int id){
     hitpoint=hp;
     this.bounty=bounty;
     this.id=id;
@@ -17,90 +18,91 @@ public Viper(int hp,int bounty, int id){
     slowRate=0;
     slowDuration=0;
     stunDuration=0;
-}
-public void slow(double slowRate,double slowDuration){
+  }
+  public void slow(double slowRate,double slowDuration){
     slowed=true;
     if(this.slowRate<slowRate){
-    this.slowRate=slowRate;
-    this.slowDuration=slowDuration;
-    curSpeed=movementspeed*(1-slowRate);
-}
+      this.slowRate=slowRate;
+      this.slowDuration=slowDuration;
+      curSpeed=movementspeed*(1-slowRate);
+    }
     
-}
-
-public int getHP(){
+  }
+  
+  public int getHP(){
     
     return curHitpoint;}
-public void damage(int damageTaken){
-        curHitpoint-=damageTaken;
-        if(curHitpoint<=0)
-        dead=true;
-    }
-
-public void kill(){
-dead=true;}
-
-public void poison(double poisonDamage, double poisonDuration){
-
-}
-public void setId(int i){
+  public void damage(int damageTaken){
+    curHitpoint-=damageTaken;
+    if(curHitpoint<=0)
+      dead=true;
+  }
+  
+  public void kill(){
+    dead=true;}
+  
+  public void poison(double poisonDamage, double poisonDuration){
+    
+  }
+  public void setId(int i){
     id=i;
-}
-public int getId(){
+  }
+  public int getId(){
     return id;
-}
-public void update(){
+  }
+  public void update(){
     if(slowDuration<=0){
-        slowRate=0;
-        slowed=false;
+      slowRate=0;
+      slowed=false;
     }
     if(stunDuration<=0){
-    move();
-        stunned=false;
+      move();
+      stunned=false;
     }
-}
-   public boolean inRange(double range){
-       /////////
-       return false;
-   }
-   public void stun(double duration){
-       stunned=true;
-       stop();
-       if(stunDuration<duration){
-       stunDuration=duration;
-       }
-       
-   }
-
-public boolean isDead(){
+  }
+  public boolean inRange(double range){
+    /////////
+    return false;
+  }
+  public void stun(double duration){
+    stunned=true;
+    stop();
+    if(stunDuration<duration){
+      stunDuration=duration;
+    }
+    
+  }
+  
+  public boolean isDead(){
     return dead;
-
-}public void setMoves(ArrayList<Integer> m){moves=m;}
-
-public void move(){
-if(moves.get(movenumber)==0)
-pos.setX(pos.getX()-1);
-else if(moves.get(movenumber)==1)
-pos.setX(pos.getX()+1);
-else if(moves.get(movenumber)==2)
-pos.setY(pos.getY()-1);
-else if(moves.get(movenumber)==3)
-pos.setY(pos.getY()+1);
-movenumber++;
-}
-public void stop(){
-curSpeed=0;
-stop=true;
-}
-public void stop(double durat){
+    
+  }public void setMoves(ArrayList<Integer> m){moves=m;}
+  
+  public void move(){
+    if(moves.get(movenumber)==0)
+      pos.setX(pos.getX()-1);
+    else if(moves.get(movenumber)==1)
+      pos.setX(pos.getX()+1);
+    else if(moves.get(movenumber)==2)
+      pos.setY(pos.getY()-1);
+    else if(moves.get(movenumber)==3)
+      pos.setY(pos.getY()+1);
+    movenumber++;
+  }
+  public void stop(){
+    curSpeed=0;
+    stop=true;
+  }
+  public void stop(double durat){
     curSpeed=0;
     if(durat>stunDuration)
-    stunDuration=durat;
-}
-public double getCurSpeed(){
+      stunDuration=durat;
+  }
+  public double getCurSpeed(){
     return curSpeed;
-}
-public double getMaxSpeed(){
+  }
+  public double getMaxSpeed(){
     return movementspeed;
-}
+  }
+  public void setPos (int x, int y){}
 }
