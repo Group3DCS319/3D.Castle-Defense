@@ -9,6 +9,7 @@ public Boss(int hp,int bounty, int id){
     curSpeed = 0.5;
     name="Boss";
     slowed=false;
+    stop=false;
     stunned=false;
     curHitpoint=hp;
     poisoned=false;
@@ -34,7 +35,7 @@ public int getId(){
     return id;
 }
 public void kill(){
-    //this=null;
+dead=true;
 }
 public void setId(int i){
     id=i;
@@ -59,8 +60,17 @@ public boolean isDead(){
 
 }
 
-public void move(){
-    ///////////
+public void move(ArrayList<Integer> moves){
+while(!stop){
+if(moves.get(movenumber)==0)
+xPos--;
+else if(moves.get(movenumber)==1)
+xPos++;
+else if(moves.get(movenumber)==2)
+yPos--;
+else if(moves.get(movenumber)==3)
+yPos++;
+}
 }
 public void stop(){
 curSpeed=0;
