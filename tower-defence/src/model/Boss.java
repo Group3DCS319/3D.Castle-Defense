@@ -6,6 +6,8 @@ public Boss(int hp,int bounty, int id){
     this.id=id;
     movementspeed =0.5;
     poisonDamage=0;
+    moves = new ArrayList<Integer>();
+    movenumber=0;
     curSpeed = 0.5;
     name="Boss";
     slowed=false;
@@ -59,9 +61,10 @@ public boolean isDead(){
     return dead;
 
 }
+public setMoves(ArrayList<Integer> m){moves=m;}
 
-public void move(ArrayList<Integer> moves){
-while(!stop){
+public void move(){
+while(!(stop || movenumber>= moves.size())){{
 if(moves.get(movenumber)==0)
 xPos--;
 else if(moves.get(movenumber)==1)
@@ -69,7 +72,8 @@ xPos++;
 else if(moves.get(movenumber)==2)
 yPos--;
 else if(moves.get(movenumber)==3)
-yPos++;
+yPos++;}
+movenumber++;
 }
 }
 public void stop(){
