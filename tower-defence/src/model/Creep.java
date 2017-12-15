@@ -15,6 +15,8 @@ abstract void poison(double poisonDamage, double poisonDuration);
 abstract boolean inRange(double range);
 abstract void stun(double duration);
 abstract boolean isDead();
+abstract void setPos(int x, int y);
+ abstract void setMoves(ArrayList<Integer> m);
 abstract void move();
 abstract void stop();
 abstract int getId();
