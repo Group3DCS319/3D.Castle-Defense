@@ -68,17 +68,15 @@ public boolean isDead(){
 public void setMoves(ArrayList<Integer> m){moves=m;}
 
 public void move(){
-while(!(stop || movenumber>= moves.size())){{
 if(moves.get(movenumber)==0)
-xPos--;
+pos.setX(pos.getX()-1);
 else if(moves.get(movenumber)==1)
-xPos++;
+pos.setX(pos.getX()+1);
 else if(moves.get(movenumber)==2)
-yPos--;
+pos.setY(pos.getY()-1);
 else if(moves.get(movenumber)==3)
-yPos++;}
+pos.setY(pos.getY()+1);
 movenumber++;
-}
 }
 public void stop(){
 curSpeed=0;
