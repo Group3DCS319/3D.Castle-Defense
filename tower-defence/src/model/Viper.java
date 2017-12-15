@@ -38,8 +38,7 @@ public void damage(int damageTaken){
     }
 
 public void kill(){
-    //this=null;
-}
+dead=true;}
 
 public void poison(double poisonDamage, double poisonDuration){
 
@@ -76,13 +75,22 @@ public void update(){
 public boolean isDead(){
     return dead;
 
-}
+}public void setMoves(ArrayList<Integer> m){moves=m;}
 
 public void move(){
-    ///////////
+if(moves.get(movenumber)==0)
+pos.setX(pos.getX()-1);
+else if(moves.get(movenumber)==1)
+pos.setX(pos.getX()+1);
+else if(moves.get(movenumber)==2)
+pos.setY(pos.getY()-1);
+else if(moves.get(movenumber)==3)
+pos.setY(pos.getY()+1);
+movenumber++;
 }
 public void stop(){
 curSpeed=0;
+stop=true;
 }
 public void stop(double durat){
     curSpeed=0;
