@@ -40,8 +40,7 @@ public int getId(){
     return id;
 }
 public void kill(){
-    //this=null;
-}
+dead=true;}
 public void setId(int i){
     id=i;
 }
