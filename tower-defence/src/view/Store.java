@@ -6,8 +6,8 @@ import java.awt.Button.*;
 public class Store extends JFrame implements ActionListener {
   
   //variables
-  int width = 2;
-  int height = 2;
+  int width = 1;
+  int height = 4;
   int size = height*width;
   JButton [] towerTypes;
   JButton mainMenuButton; 
@@ -72,26 +72,9 @@ public class Store extends JFrame implements ActionListener {
   {
     if(e.getSource()== mainMenuButton)
     {
+      Store.this.dispose(); 
       new OpeningView();
-      Store.this.dispose();
-      /*counter = 0;
-      buttons[correct].setIcon(icon);
-      buttons[correct].addActionListener(this);
-      
-      for(int i = 0; i < buttons.length; i++)
-      {
-        buttons[i].removeActionListener(this);
-      }
-      
-      for(int i = 0; i < buttons.length; i++)
-      {
-        buttons[i].setIcon(icon);
-        buttons[i].setEnabled(true);
-        buttons[i].addActionListener(this);
-      } 
-      correct = (int)( Math.random()*(size));
-      toPrint.setText("Game reset");*/
-      
+      Store.this.dispose(); 
     }
     //when the user finds the correct button
     else if (e.getSource() == towerTypes[0]) 

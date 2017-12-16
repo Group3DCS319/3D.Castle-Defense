@@ -7,7 +7,10 @@
  */
 public class Driver {
   public static void main(String[] args) {
-    new OpeningView();
-    Driver.this.dispose();
+    OpeningView op = new OpeningView();
+    
+    
+    
+    
   }
 }

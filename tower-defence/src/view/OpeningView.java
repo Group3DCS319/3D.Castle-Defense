@@ -94,6 +94,7 @@ public class OpeningView extends JFrame {
   
   private class TowerStoreListener implements ActionListener {
     public void actionPerformed(ActionEvent e) {
+      OpeningView.this.dispose();
       OpeningView.this.add(new Store());
       OpeningView.this.dispose();
     }
