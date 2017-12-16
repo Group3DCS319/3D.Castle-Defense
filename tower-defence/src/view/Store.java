@@ -57,6 +57,14 @@ public class Store extends JFrame implements ActionListener {
     mainMenuButton.addActionListener(this);
     add(mainMenuButton, "South");
     add(buttonPanel, "Center");
+    configure();
+  }
+
+  private void configure() {
+     this.setSize(WIDTH, HEIGHT);
+     this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+     this.setLocationByPlatform(true);
+     this.setVisible(true);
   }
 
   //when pressing a button
@@ -65,6 +73,7 @@ public class Store extends JFrame implements ActionListener {
     if(e.getSource()== mainMenuButton)
     {
       new OpeningView();
+      Store.this.dispose();
       /*counter = 0;
       buttons[correct].setIcon(icon);
       buttons[correct].addActionListener(this);
